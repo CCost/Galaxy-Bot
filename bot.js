@@ -13,7 +13,7 @@ bot.on("message", (msg) => {
 		var embed = new Discord.RichEmbed()
 			.setColor(c)
 			.setTitle("Help")
-			.setDescription(`     Fun:\n          Nothing here yet!\n\n     Moderation:\n\n          Nothing here yet!\n\n     Other:\n          Help - Shows you a list of commands`);
+			.setDescription(`**Fun:**\n          Nothing here yet!\n\n**Moderation:**\n\n          Nothing here yet!\n\n**Miscellaneous:**\n          Help - Shows you a list of commands`);
 		msg.channel.send(embed);
 	}
 });
