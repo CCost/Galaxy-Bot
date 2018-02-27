@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
+const c = "0x8A2BE2";
 const p = "g!";
 
 bot.on("ready", () => {
