@@ -4,23 +4,22 @@ const bot = new Discord.Client();
 const config = require("./config.json");
 
 bot.on("ready", () => {
-  console.log(`Logged in as ${bot.user.username} succesfully!`);
+	console.log(`Logged in as ${bot.user.username} succesfully!`);
 });
 
 bot.on("guildMemberAdd", member => {
-  let guild = member.guild;
-  guild.defaultChannel.sendMessage(`Welcome ${member.user.username} to ${guild.name}! If you want to talk to the leader, go ahead! His name is ${guild.owner.displayName}!`);
+	let guild = member.guild;
+	guild.defaultChannel.send(`**Welcome ${member.user.username} to ${guild.name}! I hope you have a nice time!**`);
 });
 
 bot.on("message", msg => {
-
-  if (command === "help") {
-	var embed = new Discord.RichEmbed() {
-		
+	if (command === "help") {
+		var embed = new Discord.RichEmbed()
+			.setColor(c)
+			.setTitle("Help")
+			.setDescription(`     Fun:\n          Nothing here yet!\n\n     Moderation:\n\n          Nothing here yet!\n\n     Other:\n          Help - Shows you a list of commands`);
+		msg.channel.send(embed);
 	}
-    msg.channel.sendEmbed(`     Fun:\n          Nothing here yet!\n     Moderation:\n          Nothing here yet!\n     Other:\n          Help`);
-  }
-
 });
 
 bot.login(process.env.BOT_TOKEN);
