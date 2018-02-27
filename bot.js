@@ -1,8 +1,10 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
+const p = "g!";
 
 bot.on("ready", () => {
 	console.log(`Logged in as ${bot.user.username} succesfully!`);
+	bot.user.setPresence({ status: 'online', game: { name: 'g!help' } });
 });
 
 bot.on("guildMemberAdd", member => {
@@ -11,7 +13,7 @@ bot.on("guildMemberAdd", member => {
 });
 
 bot.on("message", msg => {
-	if (command === "help") {
+	if (msg.content === (p + "help")) {
 		var embed = new Discord.RichEmbed()
 			.setColor(c)
 			.setTitle("Help")
