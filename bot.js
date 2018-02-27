@@ -7,12 +7,7 @@ bot.on("ready", () => {
 	bot.user.setPresence({ status: 'online', game: { name: 'g!help' } });
 });
 
-bot.on("guildMemberAdd", member => {
-	let guild = member.guild;
-	guild.defaultChannel.send(`**Welcome ${member.user.username} to ${guild.name}! I hope you have a nice time!**`);
-});
-
-bot.on("message", msg => {
+bot.on("message", (msg) => {
 	if (msg.content === (p + "help")) {
 		var embed = new Discord.RichEmbed()
 			.setColor(c)
